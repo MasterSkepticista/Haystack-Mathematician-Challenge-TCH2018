@@ -1,11 +1,21 @@
 clc, clear;
-url = 'http://192.168.43.1:8080/shot.jpg';
 
+
+connector on 12345678;
+m = mobiledev;
+m.PositionSensorEnabled = 1;
+m.Logging = 1;
+pause(3);
+m.Logging = 0;
+[lat, lon] = poslog(m)
 
 %% Clear environment vars
 % Image Pre-processing and plane trisection
 tic;
+url = 'http://192.168.43.1:8080/photo.jpg';
+urlwrite('http://192.168.43.1:8080/shot.jpg', 'shot.jpg');
 original_img = imread(url);
+
 convolver_map = [-1, -1, -1, -1,-1;-1, -1, -1, -1,-1;-1, -1, 23.8, -1,-1;-1, -1, -1, -1,-1;-1, -1, -1, -1,-1];
 image = imfilter(original_img, convolver_map, 'conv');
 fudgeFactor = 4;
@@ -58,11 +68,7 @@ timeElapsed=toc;
 %FileCreation
 fileID = fopen('log.txt','wt')
 fprintf(fileID,'Total Straws: %d \n',number);
+fprintf(fileID, '\nLatitude: %d, Longitude: %d', lat, lon);
 fprintf(fileID,'\nExecution Time in Program: %d seconds',timeElapsed);
-fprintf(fileID,'\nIndex \t Center pixel value \t Radii(pixels)');
-fprintf(fileID,'\n---------------------------------------------');
-for k = 1:length(centers)
-    fprintf(fileID,'\nStraw %d:\t%f\t%f',k,centers(k,1), radii(k,1));
-    
-end
+
 fclose(fileID);
