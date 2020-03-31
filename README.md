@@ -2,9 +2,9 @@
 
 ## Sample Results
 
-![Counted circles in a bunch of straws](output.jpg)
-![Synthetic Image](3.PNG) ![Synthetic Image](3.jpg)
-![Synthetic Image](4.PNG) ![Synthetic Image](4.jpg)
+![Synthetic Image](4.jpg =256x)
+![Counted circles in a bunch of straws](output.jpg =256x)
+
 
 Implemented on: MATLAB
 1. The script/program initially captures the image from a webcam (IP/NON-IP both codes attached) and pre-processes the image, by applying median noise filters.
