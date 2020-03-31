@@ -2,8 +2,7 @@
 
 ## Sample Results
 
-![Synthetic Image](4.jpg =256x)
-![Counted circles in a bunch of straws](output.jpg =256x)
+<img src="4.jpg" alt="Input Image" width="200"> <img src="output.jpg" alt="Annotated Circles" width="200"/>
 
 
 Implemented on: MATLAB
@@ -22,4 +21,7 @@ Implementer: Convolutional Neural Network
 2. The CNN trained would generate excellent edge detected output, and can be directly used to count circles.
 
 The only problem with standalone filters is that they are 'blind'. They don't see the image, but are plain Mathematical transforms. CNNs when implemented, can identify the required regions of interests.
+
+
+
 
