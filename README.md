@@ -1,4 +1,11 @@
 # Source repo for TCH-2018 Challenge
+
+## Sample Results
+
+![Counted circles in a bunch of straws](output.jpg)
+![Synthetic Image](3.PNG) ![Synthetic Image](3.jpg)
+![Synthetic Image](4.PNG) ![Synthetic Image](4.jpg)
+
 Implemented on: MATLAB
 1. The script/program initially captures the image from a webcam (IP/NON-IP both codes attached) and pre-processes the image, by applying median noise filters.
 2. Program then 'segregates' the image in RGB to individual planes. (This heavily affects identification of yellow/light color straws because the fundamental process of rgb2gray doesn't capture those)
@@ -16,6 +23,3 @@ Implementer: Convolutional Neural Network
 
 The only problem with standalone filters is that they are 'blind'. They don't see the image, but are plain Mathematical transforms. CNNs when implemented, can identify the required regions of interests.
 
-## Results
-
-![Counted circles in a bunch of straws](output.jpg)
